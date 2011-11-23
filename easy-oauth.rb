@@ -46,9 +46,9 @@ IO.popen("open -a 'Google Chrome' '" + request_token.authorize_url + "'")
 
 # Prompt OAuth Verifier
 print "Input OAuth Verifier: "
-oauth_verifier = gets.chomp.strip
+oauth_verifier = $stdin.gets.chomp.strip
 
-access_token = request_toekn.get_access_token(:oauth_verifier => oauth_verifier)
+access_token = request_token.get_access_token(:oauth_verifier => oauth_verifier)
 
 # Output access_token and access_secret
 puts "Access token: #{access_token.token}"
